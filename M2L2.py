@@ -46,4 +46,18 @@ async def tiempo(ctx, objeto: str):
 
     respuesta = degradacion.get(objeto.lower, "Noce")
     await ctx.send(respuesta)
+
+@bot.command()
+async def toxico(ctx, objeto: str):
+
+    toxicidad = {
+        "botella": " contaminantes químicos, monómeros y otros, provocando inflamación",
+        "papel": "contaminantes gaseosos, sulfuro de hidrógeno, sulfuro de sodio, metilmercaptano, azufre y dióxido de cloro",
+        "cáscara": "compuestos como el cardol y el ácido anacárdico",
+        "pilas": "se debe a los metales pesados y sustancias químicas, como mercurio, cadmio, plomo, litio y ácido sulfúrico"
+    }
+    respuesta = toxicidad.get(objeto.lower, "Noce")
+    await ctx.send(respuesta)
+
+
 bot.run(TOKEN)
